@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>optimnat.multivariable.directos package &#8212; documentación de Metodos de Optimizacion - 1.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=ed4e2bf4"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="optimnat.multivariable.gradiente package" href="optimnat.multivariable.gradiente.html" />
+    <link rel="prev" title="optimnat.multivariable package" href="optimnat.multivariable.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="optimnat-multivariable-directos-package">
+<h1>optimnat.multivariable.directos package<a class="headerlink" href="#optimnat-multivariable-directos-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-optimnat.multivariable.directos.caminata_aleatoria">
+<span id="optimnat-multivariable-directos-caminata-aleatoria-module"></span><h2>optimnat.multivariable.directos.caminata_aleatoria module<a class="headerlink" href="#module-optimnat.multivariable.directos.caminata_aleatoria" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.multivariable.directos.caminata_aleatoria.random_walk">
+<span class="sig-prename descclassname"><span class="pre">optimnat.multivariable.directos.caminata_aleatoria.</span></span><span class="sig-name descname"><span class="pre">random_walk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generacion_aleatoria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/multivariable/directos/caminata_aleatoria.html#random_walk"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.multivariable.directos.caminata_aleatoria.random_walk" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza una búsqueda aleatoria para encontrar el mínimo de una función unidimensional.</p>
+<section id="parametros">
+<h3>Parámetros:<a class="headerlink" href="#parametros" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>f<span class="classifier">Callable[[float], float]</span></dt><dd><p>La función objetivo que se desea minimizar.</p>
+</dd>
+<dt>terminar<span class="classifier">Callable[[float], bool]</span></dt><dd><p>La función de criterio de terminación que indica cuándo detener la búsqueda.</p>
+</dd>
+<dt>x0<span class="classifier">float</span></dt><dd><p>El punto inicial de la búsqueda.</p>
+</dd>
+<dt>generacion_aleatoria<span class="classifier">Callable[[float], float]</span></dt><dd><p>Función que genera pasos aleatorios basados en el punto actual.</p>
+</dd>
+</dl>
+</section>
+<section id="retorna">
+<h3>Retorna:<a class="headerlink" href="#retorna" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x_mejor<span class="classifier">float</span></dt><dd><p>El punto que minimiza la función.</p>
+</dd>
+<dt>historial_puntos<span class="classifier">List[float]</span></dt><dd><p>El historial de todos los puntos visitados durante la búsqueda.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-optimnat.multivariable.directos.hooke_jeeves">
+<span id="optimnat-multivariable-directos-hooke-jeeves-module"></span><h2>optimnat.multivariable.directos.hooke_jeeves module<a class="headerlink" href="#module-optimnat.multivariable.directos.hooke_jeeves" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.multivariable.directos.hooke_jeeves.hooke_jeeves">
+<span class="sig-prename descclassname"><span class="pre">optimnat.multivariable.directos.hooke_jeeves.</span></span><span class="sig-name descname"><span class="pre">hooke_jeeves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/multivariable/directos/hooke_jeeves.html#hooke_jeeves"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.multivariable.directos.hooke_jeeves.hooke_jeeves" title="Link to this definition">¶</a></dt>
+<dd><p>Implementación del método de optimización Hooke-Jeeves.</p>
+<section id="id1">
+<h3>Parámetros:<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>f<span class="classifier">Callable[[np.ndarray], float]</span></dt><dd><p>Función objetivo que se desea minimizar.</p>
+</dd>
+<dt>x0<span class="classifier">np.ndarray</span></dt><dd><p>Punto inicial de búsqueda.</p>
+</dd>
+<dt>delta<span class="classifier">np.ndarray</span></dt><dd><p>Vector de pasos inicial.</p>
+</dd>
+<dt>alpha<span class="classifier">float</span></dt><dd><p>Factor de reducción de delta.</p>
+</dd>
+<dt>epsilon<span class="classifier">float</span></dt><dd><p>Criterio de convergencia para la norma de delta.</p>
+</dd>
+<dt>max_iter<span class="classifier">int</span></dt><dd><p>Número máximo de iteraciones permitidas.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>Retorna:<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>xk<span class="classifier">np.ndarray</span></dt><dd><p>Punto óptimo encontrado.</p>
+</dd>
+<dt>history<span class="classifier">List[np.ndarray]</span></dt><dd><p>Historial de puntos visitados durante la optimización.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-optimnat.multivariable.directos.nelder_mead">
+<span id="optimnat-multivariable-directos-nelder-mead-module"></span><h2>optimnat.multivariable.directos.nelder_mead module<a class="headerlink" href="#module-optimnat.multivariable.directos.nelder_mead" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.multivariable.directos.nelder_mead.nelder_mead">
+<span class="sig-prename descclassname"><span class="pre">optimnat.multivariable.directos.nelder_mead.</span></span><span class="sig-name descname"><span class="pre">nelder_mead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/multivariable/directos/nelder_mead.html#nelder_mead"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.multivariable.directos.nelder_mead.nelder_mead" title="Link to this definition">¶</a></dt>
+<dd><p>Implementa el método Nelder-Mead para encontrar el mínimo de una función multidimensional.</p>
+<section id="id3">
+<h3>Parámetros:<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>f<span class="classifier">Callable[[np.ndarray], float]</span></dt><dd><p>La función objetivo que se desea minimizar.</p>
+</dd>
+<dt>x0<span class="classifier">np.ndarray</span></dt><dd><p>El punto inicial de la búsqueda.</p>
+</dd>
+<dt>gamma<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de expansión para la fase de expansión (default=2).</p>
+</dd>
+<dt>beta<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de contracción para la fase de contracción (default=0.5).</p>
+</dd>
+<dt>epsilon<span class="classifier">float, opcional</span></dt><dd><p>Criterio de convergencia. El algoritmo termina cuando la desviación estándar de
+los valores de la función es menor o igual a epsilon (default=1e-5).</p>
+</dd>
+<dt>max_iter<span class="classifier">int, opcional</span></dt><dd><p>Número máximo de iteraciones permitidas (default=1000).</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h3>Retorna:<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x_optimo<span class="classifier">np.ndarray</span></dt><dd><p>El punto que minimiza la función.</p>
+</dd>
+<dt>historial_puntos<span class="classifier">List[List[float]]</span></dt><dd><p>El historial de puntos evaluados durante la optimización.
+Cada entrada es una lista que representa un punto en el espacio de búsqueda.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-optimnat.multivariable.directos">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-optimnat.multivariable.directos" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.multivariable.directos.hooke_jeeves">
+<span class="sig-prename descclassname"><span class="pre">optimnat.multivariable.directos.</span></span><span class="sig-name descname"><span class="pre">hooke_jeeves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/multivariable/directos/hooke_jeeves.html#hooke_jeeves"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.multivariable.directos.hooke_jeeves" title="Link to this definition">¶</a></dt>
+<dd><p>Implementación del método de optimización Hooke-Jeeves.</p>
+<section id="id5">
+<h3>Parámetros:<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>f<span class="classifier">Callable[[np.ndarray], float]</span></dt><dd><p>Función objetivo que se desea minimizar.</p>
+</dd>
+<dt>x0<span class="classifier">np.ndarray</span></dt><dd><p>Punto inicial de búsqueda.</p>
+</dd>
+<dt>delta<span class="classifier">np.ndarray</span></dt><dd><p>Vector de pasos inicial.</p>
+</dd>
+<dt>alpha<span class="classifier">float</span></dt><dd><p>Factor de reducción de delta.</p>
+</dd>
+<dt>epsilon<span class="classifier">float</span></dt><dd><p>Criterio de convergencia para la norma de delta.</p>
+</dd>
+<dt>max_iter<span class="classifier">int</span></dt><dd><p>Número máximo de iteraciones permitidas.</p>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h3>Retorna:<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>xk<span class="classifier">np.ndarray</span></dt><dd><p>Punto óptimo encontrado.</p>
+</dd>
+<dt>history<span class="classifier">List[np.ndarray]</span></dt><dd><p>Historial de puntos visitados durante la optimización.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.multivariable.directos.nelder_mead">
+<span class="sig-prename descclassname"><span class="pre">optimnat.multivariable.directos.</span></span><span class="sig-name descname"><span class="pre">nelder_mead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/multivariable/directos/nelder_mead.html#nelder_mead"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.multivariable.directos.nelder_mead" title="Link to this definition">¶</a></dt>
+<dd><p>Implementa el método Nelder-Mead para encontrar el mínimo de una función multidimensional.</p>
+<section id="id7">
+<h3>Parámetros:<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>f<span class="classifier">Callable[[np.ndarray], float]</span></dt><dd><p>La función objetivo que se desea minimizar.</p>
+</dd>
+<dt>x0<span class="classifier">np.ndarray</span></dt><dd><p>El punto inicial de la búsqueda.</p>
+</dd>
+<dt>gamma<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de expansión para la fase de expansión (default=2).</p>
+</dd>
+<dt>beta<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de contracción para la fase de contracción (default=0.5).</p>
+</dd>
+<dt>epsilon<span class="classifier">float, opcional</span></dt><dd><p>Criterio de convergencia. El algoritmo termina cuando la desviación estándar de
+los valores de la función es menor o igual a epsilon (default=1e-5).</p>
+</dd>
+<dt>max_iter<span class="classifier">int, opcional</span></dt><dd><p>Número máximo de iteraciones permitidas (default=1000).</p>
+</dd>
+</dl>
+</section>
+<section id="id8">
+<h3>Retorna:<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x_optimo<span class="classifier">np.ndarray</span></dt><dd><p>El punto que minimiza la función.</p>
+</dd>
+<dt>historial_puntos<span class="classifier">List[List[float]]</span></dt><dd><p>El historial de puntos evaluados durante la optimización.
+Cada entrada es una lista que representa un punto en el espacio de búsqueda.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.multivariable.directos.random_walk">
+<span class="sig-prename descclassname"><span class="pre">optimnat.multivariable.directos.</span></span><span class="sig-name descname"><span class="pre">random_walk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generacion_aleatoria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/multivariable/directos/caminata_aleatoria.html#random_walk"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.multivariable.directos.random_walk" title="Link to this definition">¶</a></dt>
+<dd><p>Realiza una búsqueda aleatoria para encontrar el mínimo de una función unidimensional.</p>
+<section id="id9">
+<h3>Parámetros:<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>f<span class="classifier">Callable[[float], float]</span></dt><dd><p>La función objetivo que se desea minimizar.</p>
+</dd>
+<dt>terminar<span class="classifier">Callable[[float], bool]</span></dt><dd><p>La función de criterio de terminación que indica cuándo detener la búsqueda.</p>
+</dd>
+<dt>x0<span class="classifier">float</span></dt><dd><p>El punto inicial de la búsqueda.</p>
+</dd>
+<dt>generacion_aleatoria<span class="classifier">Callable[[float], float]</span></dt><dd><p>Función que genera pasos aleatorios basados en el punto actual.</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h3>Retorna:<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x_mejor<span class="classifier">float</span></dt><dd><p>El punto que minimiza la función.</p>
+</dd>
+<dt>historial_puntos<span class="classifier">List[float]</span></dt><dd><p>El historial de todos los puntos visitados durante la búsqueda.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Metodos de Optimizacion</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="optimnat.html">optimnat package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="optimnat.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimnat.html#module-optimnat">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="optimnat.html">optimnat package</a><ul>
+  <li><a href="optimnat.multivariable.html">optimnat.multivariable package</a><ul>
+      <li>Previous: <a href="optimnat.multivariable.html" title="capítulo anterior">optimnat.multivariable package</a></li>
+      <li>Next: <a href="optimnat.multivariable.gradiente.html" title="próximo capítulo">optimnat.multivariable.gradiente package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Natalia Jarquin.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/optimnat.multivariable.directos.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

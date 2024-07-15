@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>optimnat.multivariable.gradiente.newton &#8212; documentación de Metodos de Optimizacion - 1.1</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=12dfc556" />
+    <script src="../../../../_static/documentation_options.js?v=ed4e2bf4"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/translations.js?v=d190bf04"></script>
+    <link rel="index" title="Índice" href="../../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Código fuente para optimnat.multivariable.gradiente.newton</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">_regla_eliminacion</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">fx1</span><span class="p">,</span> <span class="n">fx2</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Aplica la regla de eliminación para determinar los límites actualizados según los valores de la función.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">    - x1, x2: Los puntos candidatos para la regla de eliminación.</span>
+<span class="sd">    - fx1, fx2: Los valores de la función en x1 y x2, respectivamente.</span>
+<span class="sd">    - a, b: Los límites originales del intervalo.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - Tuple[float, float]: Los límites actualizados después de aplicar la regla de eliminación.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">fx1</span> <span class="o">&gt;</span> <span class="n">fx2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x1</span><span class="p">,</span> <span class="n">b</span>
+
+    <span class="k">if</span> <span class="n">fx1</span> <span class="o">&lt;</span> <span class="n">fx2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="n">x2</span>
+    
+    <span class="k">return</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span>
+
+<span class="k">def</span> <span class="nf">_w_to_x</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convierte un valor w en el intervalo [0, 1] a un valor en el intervalo [a, b].</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">    - w: El valor en el intervalo [0, 1] que se desea convertir.</span>
+<span class="sd">    - a, b: Los límites del intervalo objetivo [a, b].</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - float: El valor convertido en el intervalo [a, b].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">w</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">_busquedaDorada</span><span class="p">(</span><span class="n">funcion</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implementa el método de búsqueda dorada para encontrar el mínimo de una función unidimensional.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">    - funcion (callable): La función objetivo que se desea minimizar.</span>
+<span class="sd">    - epsilon (float): El criterio de convergencia. El algoritmo termina cuando el tamaño del intervalo es menor que epsilon.</span>
+<span class="sd">    - a, b (float, opcional): Los límites del intervalo inicial de búsqueda. Por defecto, a=0.0 y b=1.0.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - float: El punto que minimiza la función dentro del intervalo [a, b].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">PHI</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">aw</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="n">Lw</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">while</span> <span class="n">Lw</span> <span class="o">&gt;</span> <span class="n">epsilon</span><span class="p">:</span>
+        <span class="n">w2</span> <span class="o">=</span> <span class="n">aw</span> <span class="o">+</span> <span class="n">PHI</span> <span class="o">*</span> <span class="n">Lw</span>
+        <span class="n">w1</span> <span class="o">=</span> <span class="n">bw</span> <span class="o">-</span> <span class="n">PHI</span> <span class="o">*</span> <span class="n">Lw</span>
+        <span class="n">aw</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="n">_regla_eliminacion</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">funcion</span><span class="p">(</span><span class="n">_w_to_x</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)),</span> 
+                                    <span class="n">funcion</span><span class="p">(</span><span class="n">_w_to_x</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)),</span> <span class="n">aw</span><span class="p">,</span> <span class="n">bw</span><span class="p">)</span>
+        <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">Lw</span> <span class="o">=</span> <span class="n">bw</span> <span class="o">-</span> <span class="n">aw</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">_w_to_x</span><span class="p">(</span><span class="n">aw</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">_w_to_x</span><span class="p">(</span><span class="n">bw</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+
+<div class="viewcode-block" id="gradiente">
+<a class="viewcode-back" href="../../../../optimnat.multivariable.gradiente.html#optimnat.multivariable.gradiente">[documentos]</a>
+<span class="k">def</span> <span class="nf">gradiente</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">deltaX</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calcula el gradiente de una función f en un punto x utilizando el método de diferencia finita central.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">    - f (callable): La función objetivo para la cual se calcula el gradiente.</span>
+<span class="sd">    - x (np.ndarray): El punto en el cual se evalúa el gradiente.</span>
+<span class="sd">    - deltaX (float, opcional): El tamaño del paso para la diferencia finita central. Por defecto, deltaX=0.00001.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - List[float]: Una lista de gradientes parciales en el punto x.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">grad</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+        <span class="n">xp</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">xn</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">xp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">deltaX</span>
+        <span class="n">xn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">deltaX</span>
+        <span class="n">grad</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">f</span><span class="p">(</span><span class="n">xp</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">xn</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">deltaX</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">grad</span></div>
+
+
+<span class="k">def</span> <span class="nf">_hessian_matrix</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">deltaX</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calcula la matriz hessiana de una función f en un punto x utilizando el método de diferencia finita central.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">    - f (callable): La función objetivo para la cual se calcula la matriz hessiana.</span>
+<span class="sd">    - x (np.ndarray): El punto en el cual se evalúa la matriz hessiana.</span>
+<span class="sd">    - deltaX (float, opcional): El tamaño del paso para la diferencia finita central. Por defecto, deltaX=0.00001.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - np.ndarray: La matriz hessiana evaluada en el punto x.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fx</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">:</span>
+                <span class="n">xp</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">xn</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">xp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">deltaX</span>
+                <span class="n">xn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">deltaX</span>
+                <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">xp</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">fx</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">xn</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">deltaX</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">xpp</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">xpn</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">xnp</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">xnn</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">xpp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xpp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">deltaX</span>
+                <span class="n">xpp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">xpp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">deltaX</span>
+                <span class="n">xpn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xpn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">deltaX</span>
+                <span class="n">xpn</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">xpn</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">deltaX</span>
+                <span class="n">xnp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xnp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">deltaX</span>
+                <span class="n">xnp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">xnp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">deltaX</span>
+                <span class="n">xnn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xnn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">deltaX</span>
+                <span class="n">xnn</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">xnn</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">deltaX</span>
+                <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">xpp</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">xpn</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">xnp</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">xnn</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">deltaX</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">H</span>
+
+<div class="viewcode-block" id="newton">
+<a class="viewcode-back" href="../../../../optimnat.multivariable.gradiente.html#optimnat.multivariable.newton">[documentos]</a>
+<span class="k">def</span> <span class="nf">newton</span><span class="p">(</span><span class="n">funcion</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">epsilon1</span><span class="p">,</span> <span class="n">epsilon2</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Método de Newton para encontrar el mínimo de una función multidimensional.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">    - funcion (callable): La función objetivo que se desea minimizar.</span>
+<span class="sd">    - x0 (np.ndarray): El punto inicial de la búsqueda.</span>
+<span class="sd">    - epsilon1 (float): El criterio de convergencia para el gradiente. El algoritmo termina cuando el tamaño del gradiente es menor que epsilon1.</span>
+<span class="sd">    - epsilon2 (float): El criterio de convergencia para la búsqueda unidireccional. El algoritmo termina cuando la distancia entre puntos sucesivos es menor que epsilon2.</span>
+<span class="sd">    - M (int): El número máximo de iteraciones permitidas.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    - dict: Diccionario con los resultados de la optimización</span>
+<span class="sd">        &#39;punto_optimo&#39;: Punto óptimo encontrado</span>
+<span class="sd">        &#39;valor_optimo&#39;: Valor óptimo de la función en el punto óptimo</span>
+<span class="sd">        &#39;iteraciones&#39;: Número de iteraciones realizadas</span>
+<span class="sd">        &#39;trayectoria&#39;: Trayectoria de puntos visitados durante la optimización</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">terminar</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">xk</span> <span class="o">=</span> <span class="n">x0</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">trayectoria</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>  <span class="c1"># Inicializar la trayectoria con el punto inicial</span>
+    
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">terminar</span><span class="p">:</span>
+        <span class="n">grad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gradiente</span><span class="p">(</span><span class="n">funcion</span><span class="p">,</span> <span class="n">xk</span><span class="p">))</span>
+        <span class="n">hessiana</span> <span class="o">=</span> <span class="n">_hessian_matrix</span><span class="p">(</span><span class="n">funcion</span><span class="p">,</span> <span class="n">xk</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">grad</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon1</span> <span class="ow">or</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="n">M</span><span class="p">:</span>
+            <span class="n">terminar</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">def</span> <span class="nf">alpha_funcion</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">funcion</span><span class="p">(</span><span class="n">xk</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">hessiana</span><span class="p">),</span> <span class="n">grad</span><span class="p">))</span>
+            
+            <span class="n">alpha</span> <span class="o">=</span> <span class="n">_busquedaDorada</span><span class="p">(</span><span class="n">alpha_funcion</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="n">epsilon2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+            <span class="n">x_k1</span> <span class="o">=</span> <span class="n">xk</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">hessiana</span><span class="p">),</span> <span class="n">grad</span><span class="p">)</span>
+            <span class="n">trayectoria</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_k1</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>  <span class="c1"># Guardar el punto visitado</span>
+            
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x_k1</span> <span class="o">-</span> <span class="n">xk</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">xk</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.00001</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">epsilon2</span><span class="p">:</span>
+                <span class="n">terminar</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">xk</span> <span class="o">=</span> <span class="n">x_k1</span>
+    
+    <span class="n">resultado</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;punto_optimo&#39;</span><span class="p">:</span> <span class="n">xk</span><span class="p">,</span>
+        <span class="s1">&#39;valor_optimo&#39;</span><span class="p">:</span> <span class="n">funcion</span><span class="p">(</span><span class="n">xk</span><span class="p">),</span>
+        <span class="s1">&#39;iteraciones&#39;</span><span class="p">:</span> <span class="n">k</span><span class="p">,</span>
+        <span class="s1">&#39;trayectoria&#39;</span><span class="p">:</span> <span class="n">trayectoria</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">resultado</span></div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">Metodos de Optimizacion</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../optimnat.html">optimnat package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Código de módulo</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Natalia Jarquin.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>optimnat.multivariable.directos.caminata_aleatoria &#8212; documentación de Metodos de Optimizacion - 1.1</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=12dfc556" />
+    <script src="../../../../_static/documentation_options.js?v=ed4e2bf4"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/translations.js?v=d190bf04"></script>
+    <link rel="index" title="Índice" href="../../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Código fuente para optimnat.multivariable.directos.caminata_aleatoria</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span>
+
+<div class="viewcode-block" id="random_walk">
+<a class="viewcode-back" href="../../../../optimnat.multivariable.directos.html#optimnat.multivariable.directos.caminata_aleatoria.random_walk">[documentos]</a>
+<span class="k">def</span> <span class="nf">random_walk</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">float</span><span class="p">],</span> <span class="nb">float</span><span class="p">],</span>
+                <span class="n">terminar</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">float</span><span class="p">],</span> <span class="nb">bool</span><span class="p">],</span>
+                <span class="n">x0</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                <span class="n">generacion_aleatoria</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">float</span><span class="p">],</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Realiza una búsqueda aleatoria para encontrar el mínimo de una función unidimensional.</span>
+
+<span class="sd">    Parámetros:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    f : Callable[[float], float]</span>
+<span class="sd">        La función objetivo que se desea minimizar.</span>
+<span class="sd">    terminar : Callable[[float], bool]</span>
+<span class="sd">        La función de criterio de terminación que indica cuándo detener la búsqueda.</span>
+<span class="sd">    x0 : float</span>
+<span class="sd">        El punto inicial de la búsqueda.</span>
+<span class="sd">    generacion_aleatoria : Callable[[float], float]</span>
+<span class="sd">        Función que genera pasos aleatorios basados en el punto actual.</span>
+
+<span class="sd">    Retorna:</span>
+<span class="sd">    -------</span>
+<span class="sd">    x_mejor : float</span>
+<span class="sd">        El punto que minimiza la función.</span>
+<span class="sd">    historial_puntos : List[float]</span>
+<span class="sd">        El historial de todos los puntos visitados durante la búsqueda.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x_mejor</span> <span class="o">=</span> <span class="n">x0</span>
+    <span class="n">x_actual</span> <span class="o">=</span> <span class="n">x0</span>
+    <span class="n">historial_puntos</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_actual</span><span class="p">]</span>  <span class="c1"># Para almacenar todos los puntos visitados</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">terminar</span><span class="p">(</span><span class="n">x_actual</span><span class="p">):</span>
+        <span class="n">x_siguiente</span> <span class="o">=</span> <span class="n">generacion_aleatoria</span><span class="p">(</span><span class="n">x_actual</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x_siguiente</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">f</span><span class="p">(</span><span class="n">x_mejor</span><span class="p">):</span>
+            <span class="n">x_mejor</span> <span class="o">=</span> <span class="n">x_siguiente</span>
+        <span class="n">x_actual</span> <span class="o">=</span> <span class="n">x_siguiente</span>
+        <span class="n">historial_puntos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_actual</span><span class="p">)</span>  <span class="c1"># Guardar el punto visitado en el historial</span>
+    
+    <span class="k">return</span> <span class="n">x_mejor</span><span class="p">,</span> <span class="n">historial_puntos</span></div>
+
+
+<span class="c1"># Criterio de terminación</span>
+<span class="k">def</span> <span class="nf">_criterio_terminacion</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Criterio de terminación para la búsqueda aleatoria.</span>
+
+<span class="sd">    Parámetros:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : float</span>
+<span class="sd">        El punto actual en la búsqueda.</span>
+<span class="sd">    max_iter : int, opcional</span>
+<span class="sd">        Número máximo de iteraciones permitidas antes de terminar la búsqueda (default=100).</span>
+
+<span class="sd">    Retorna:</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True si se debe terminar la búsqueda, False de lo contrario.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_criterio_terminacion</span><span class="o">.</span><span class="n">iteraciones</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">_criterio_terminacion</span><span class="o">.</span><span class="n">iteraciones</span> <span class="o">&gt;=</span> <span class="n">max_iter</span>
+
+<span class="c1"># Inicialización del contador de iteraciones</span>
+<span class="n">_criterio_terminacion</span><span class="o">.</span><span class="n">iteraciones</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Generación de pasos aleatorios</span>
+<span class="k">def</span> <span class="nf">_generacion_aleatoria</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">mu</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Genera un paso aleatorio basado en el punto actual x.</span>
+
+<span class="sd">    Parámetros:</span>
+<span class="sd">    ----------</span>
+<span class="sd">    x : float</span>
+<span class="sd">        El punto actual en la búsqueda.</span>
+<span class="sd">    mu : float, opcional</span>
+<span class="sd">        Media de la distribución normal para la generación aleatoria (default=0).</span>
+<span class="sd">    sigma : float, opcional</span>
+<span class="sd">        Desviación estándar de la distribución normal para la generación aleatoria (default=0.5).</span>
+
+<span class="sd">    Retorna:</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        El próximo punto generado aleatoriamente.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">Metodos de Optimizacion</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../optimnat.html">optimnat package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Código de módulo</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Natalia Jarquin.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

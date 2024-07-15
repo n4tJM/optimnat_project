@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>optimnat.univariable.derivada package &#8212; documentación de Metodos de Optimizacion - 1.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=ed4e2bf4"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="optimnat.univariable.eliminacion_regiones package" href="optimnat.univariable.eliminacion_regiones.html" />
+    <link rel="prev" title="optimnat.univariable package" href="optimnat.univariable.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="optimnat-univariable-derivada-package">
+<h1>optimnat.univariable.derivada package<a class="headerlink" href="#optimnat-univariable-derivada-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-optimnat.univariable.derivada.biseccion">
+<span id="optimnat-univariable-derivada-biseccion-module"></span><h2>optimnat.univariable.derivada.biseccion module<a class="headerlink" href="#module-optimnat.univariable.derivada.biseccion" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.univariable.derivada.biseccion.biseccion">
+<span class="sig-prename descclassname"><span class="pre">optimnat.univariable.derivada.biseccion.</span></span><span class="sig-name descname"><span class="pre">biseccion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/univariable/derivada/biseccion.html#biseccion"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.univariable.derivada.biseccion.biseccion" title="Link to this definition">¶</a></dt>
+<dd><p>Implementa el método de bisección para encontrar el mínimo de una función unidimensional.</p>
+<section id="parametros">
+<h3>Parámetros:<a class="headerlink" href="#parametros" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>a<span class="classifier">float</span></dt><dd><p>El límite inferior del intervalo de búsqueda.</p>
+</dd>
+<dt>b<span class="classifier">float</span></dt><dd><p>El límite superior del intervalo de búsqueda.</p>
+</dd>
+<dt>epsilon<span class="classifier">float</span></dt><dd><p>El criterio de convergencia. El algoritmo termina cuando la magnitud de la derivada es menor que epsilon.</p>
+</dd>
+<dt>f<span class="classifier">Callable[[float], float]</span></dt><dd><p>La función objetivo que se desea minimizar.</p>
+</dd>
+</dl>
+</section>
+<section id="retorna">
+<h3>Retorna:<a class="headerlink" href="#retorna" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>z_opt<span class="classifier">float</span></dt><dd><p>El punto que minimiza la función.</p>
+</dd>
+<dt>history<span class="classifier">List[Tuple[float, float, float, float, float]]</span></dt><dd><p>El historial de puntos evaluados durante la optimización.
+Cada entrada es una tupla (x1, x2, z, f(z), f”(z)).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-optimnat.univariable.derivada.newton_raphson">
+<span id="optimnat-univariable-derivada-newton-raphson-module"></span><h2>optimnat.univariable.derivada.newton_raphson module<a class="headerlink" href="#module-optimnat.univariable.derivada.newton_raphson" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.univariable.derivada.newton_raphson.newton_method">
+<span class="sig-prename descclassname"><span class="pre">optimnat.univariable.derivada.newton_raphson.</span></span><span class="sig-name descname"><span class="pre">newton_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/univariable/derivada/newton_raphson.html#newton_method"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.univariable.derivada.newton_raphson.newton_method" title="Link to this definition">¶</a></dt>
+<dd><p>Implementa el método de Newton para encontrar el mínimo de una función unidimensional.</p>
+<section id="id1">
+<h3>Parámetros:<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x0<span class="classifier">float</span></dt><dd><p>El punto inicial para el algoritmo de Newton.</p>
+</dd>
+<dt>epsilon<span class="classifier">float</span></dt><dd><p>El criterio de convergencia. El algoritmo termina cuando la magnitud de la derivada es menor que epsilon.</p>
+</dd>
+<dt>f<span class="classifier">Callable[[float], float]</span></dt><dd><p>La función objetivo que se desea minimizar.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>Retorna:<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x_opt<span class="classifier">float</span></dt><dd><p>El punto que minimiza la función.</p>
+</dd>
+<dt>history<span class="classifier">List[Tuple[float, float, float, float]]</span></dt><dd><p>El historial de puntos evaluados durante la optimización.
+Cada entrada es una tupla (x, f(x), f”(x), f””(x)).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-optimnat.univariable.derivada.secante">
+<span id="optimnat-univariable-derivada-secante-module"></span><h2>optimnat.univariable.derivada.secante module<a class="headerlink" href="#module-optimnat.univariable.derivada.secante" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.univariable.derivada.secante.secante">
+<span class="sig-prename descclassname"><span class="pre">optimnat.univariable.derivada.secante.</span></span><span class="sig-name descname"><span class="pre">secante</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/univariable/derivada/secante.html#secante"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.univariable.derivada.secante.secante" title="Link to this definition">¶</a></dt>
+<dd><p>Implementa el método de la secante para encontrar el mínimo de una función unidimensional.</p>
+<section id="id3">
+<h3>Parámetros:<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>a<span class="classifier">float</span></dt><dd><p>El límite inferior del intervalo de búsqueda.</p>
+</dd>
+<dt>b<span class="classifier">float</span></dt><dd><p>El límite superior del intervalo de búsqueda.</p>
+</dd>
+<dt>epsilon<span class="classifier">float</span></dt><dd><p>El criterio de convergencia. El algoritmo termina cuando la magnitud de la derivada es menor que epsilon.</p>
+</dd>
+<dt>f<span class="classifier">Callable[[float], float]</span></dt><dd><p>La función objetivo que se desea minimizar.</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h3>Retorna:<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>z_opt<span class="classifier">float</span></dt><dd><p>El punto que minimiza la función.</p>
+</dd>
+<dt>history<span class="classifier">List[Tuple[float, float, float, float, float]]</span></dt><dd><p>El historial de puntos evaluados durante la optimización.
+Cada entrada es una tupla (x1, x2, z, f(z), f”(z)).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-optimnat.univariable.derivada">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-optimnat.univariable.derivada" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.univariable.derivada.biseccion">
+<span class="sig-prename descclassname"><span class="pre">optimnat.univariable.derivada.</span></span><span class="sig-name descname"><span class="pre">biseccion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/univariable/derivada/biseccion.html#biseccion"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.univariable.derivada.biseccion" title="Link to this definition">¶</a></dt>
+<dd><p>Implementa el método de bisección para encontrar el mínimo de una función unidimensional.</p>
+<section id="id5">
+<h3>Parámetros:<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>a<span class="classifier">float</span></dt><dd><p>El límite inferior del intervalo de búsqueda.</p>
+</dd>
+<dt>b<span class="classifier">float</span></dt><dd><p>El límite superior del intervalo de búsqueda.</p>
+</dd>
+<dt>epsilon<span class="classifier">float</span></dt><dd><p>El criterio de convergencia. El algoritmo termina cuando la magnitud de la derivada es menor que epsilon.</p>
+</dd>
+<dt>f<span class="classifier">Callable[[float], float]</span></dt><dd><p>La función objetivo que se desea minimizar.</p>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h3>Retorna:<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>z_opt<span class="classifier">float</span></dt><dd><p>El punto que minimiza la función.</p>
+</dd>
+<dt>history<span class="classifier">List[Tuple[float, float, float, float, float]]</span></dt><dd><p>El historial de puntos evaluados durante la optimización.
+Cada entrada es una tupla (x1, x2, z, f(z), f”(z)).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.univariable.derivada.newton_method">
+<span class="sig-prename descclassname"><span class="pre">optimnat.univariable.derivada.</span></span><span class="sig-name descname"><span class="pre">newton_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/univariable/derivada/newton_raphson.html#newton_method"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.univariable.derivada.newton_method" title="Link to this definition">¶</a></dt>
+<dd><p>Implementa el método de Newton para encontrar el mínimo de una función unidimensional.</p>
+<section id="id7">
+<h3>Parámetros:<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x0<span class="classifier">float</span></dt><dd><p>El punto inicial para el algoritmo de Newton.</p>
+</dd>
+<dt>epsilon<span class="classifier">float</span></dt><dd><p>El criterio de convergencia. El algoritmo termina cuando la magnitud de la derivada es menor que epsilon.</p>
+</dd>
+<dt>f<span class="classifier">Callable[[float], float]</span></dt><dd><p>La función objetivo que se desea minimizar.</p>
+</dd>
+</dl>
+</section>
+<section id="id8">
+<h3>Retorna:<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x_opt<span class="classifier">float</span></dt><dd><p>El punto que minimiza la función.</p>
+</dd>
+<dt>history<span class="classifier">List[Tuple[float, float, float, float]]</span></dt><dd><p>El historial de puntos evaluados durante la optimización.
+Cada entrada es una tupla (x, f(x), f”(x), f””(x)).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.univariable.derivada.secante">
+<span class="sig-prename descclassname"><span class="pre">optimnat.univariable.derivada.</span></span><span class="sig-name descname"><span class="pre">secante</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/optimnat/univariable/derivada/secante.html#secante"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.univariable.derivada.secante" title="Link to this definition">¶</a></dt>
+<dd><p>Implementa el método de la secante para encontrar el mínimo de una función unidimensional.</p>
+<section id="id9">
+<h3>Parámetros:<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>a<span class="classifier">float</span></dt><dd><p>El límite inferior del intervalo de búsqueda.</p>
+</dd>
+<dt>b<span class="classifier">float</span></dt><dd><p>El límite superior del intervalo de búsqueda.</p>
+</dd>
+<dt>epsilon<span class="classifier">float</span></dt><dd><p>El criterio de convergencia. El algoritmo termina cuando la magnitud de la derivada es menor que epsilon.</p>
+</dd>
+<dt>f<span class="classifier">Callable[[float], float]</span></dt><dd><p>La función objetivo que se desea minimizar.</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h3>Retorna:<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>z_opt<span class="classifier">float</span></dt><dd><p>El punto que minimiza la función.</p>
+</dd>
+<dt>history<span class="classifier">List[Tuple[float, float, float, float, float]]</span></dt><dd><p>El historial de puntos evaluados durante la optimización.
+Cada entrada es una tupla (x1, x2, z, f(z), f”(z)).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Metodos de Optimizacion</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="optimnat.html">optimnat package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="optimnat.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimnat.html#module-optimnat">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="optimnat.html">optimnat package</a><ul>
+  <li><a href="optimnat.univariable.html">optimnat.univariable package</a><ul>
+      <li>Previous: <a href="optimnat.univariable.html" title="capítulo anterior">optimnat.univariable package</a></li>
+      <li>Next: <a href="optimnat.univariable.eliminacion_regiones.html" title="próximo capítulo">optimnat.univariable.eliminacion_regiones package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Natalia Jarquin.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/optimnat.univariable.derivada.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

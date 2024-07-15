@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>optimnat.funciones package &#8212; documentación de Metodos de Optimizacion - 1.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=ed4e2bf4"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=d190bf04"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="optimnat.multivariable package" href="optimnat.multivariable.html" />
+    <link rel="prev" title="optimnat package" href="optimnat.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="optimnat-funciones-package">
+<h1>optimnat.funciones package<a class="headerlink" href="#optimnat-funciones-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-optimnat.funciones.fun_restricciones">
+<span id="optimnat-funciones-fun-restricciones-module"></span><h2>optimnat.funciones.fun_restricciones module<a class="headerlink" href="#module-optimnat.funciones.fun_restricciones" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.bird_mishra">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">bird_mishra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#bird_mishra"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.bird_mishra" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Bird-Mishra, definida matemáticamente como:
+f(x, y) = sin(y) * exp((1 - cos(x))**2) + cos(x) * exp((1 - sin(y))**2) + (x - y)**2</p>
+<section id="parametros">
+<h3>Parámetros:<a class="headerlink" href="#parametros" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="retorna">
+<h3>Retorna:<a class="headerlink" href="#retorna" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Bird-Mishra evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.gomez_levy">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">gomez_levy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#gomez_levy"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.gomez_levy" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Gómez y Levy, definida matemáticamente como:
+f(x, y) = 4*x**2 - 2.1*x**4 + (1/3)*x**6 + x*y - 4*y**2 + 4*y**4</p>
+<section id="id1">
+<h3>Parámetros:<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>Retorna:<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Gómez y Levy evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.plot_bird_mishra_with_constraints">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_bird_mishra_with_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_bird_mishra_with_constraints"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.plot_bird_mishra_with_constraints" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Bird-Mishra, restringida por una condición circular.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Bird-Mishra y aplica una restricción circular en el dominio.
+Muestra el punto óptimo conocido en el gráfico y configura etiquetas y título adecuados.</p>
+<section id="id3">
+<h3>Parámetros:<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id4">
+<h3>Retorna:<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.plot_gomez_levy_with_constraints">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_gomez_levy_with_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_gomez_levy_with_constraints"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.plot_gomez_levy_with_constraints" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Gomez y Levy con restricciones definidas.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Gomez y Levy y aplica restricciones en el dominio.
+Configura etiquetas y título adecuados.</p>
+<section id="id5">
+<h3>Parámetros:<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id6">
+<h3>Retorna:<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.plot_rosenbrock_cubic_linear_constraint">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_rosenbrock_cubic_linear_constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_rosenbrock_cubic_linear_constraint"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.plot_rosenbrock_cubic_linear_constraint" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Rosenbrock, restringida por una cúbica y una restricción lineal.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Rosenbrock y aplica restricciones cúbicas y lineales en el dominio.
+Muestra el punto óptimo conocido en el gráfico y configura etiquetas y título adecuados.</p>
+<section id="id7">
+<h3>Parámetros:<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id8">
+<h3>Retorna:<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.plot_rosenbrock_disc_constraint">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_rosenbrock_disc_constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_rosenbrock_disc_constraint"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.plot_rosenbrock_disc_constraint" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Rosenbrock, restringida a un disco de radio 2 centrado en el origen.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Rosenbrock y aplica una restricción circular en el dominio.
+Muestra el punto óptimo conocido en el gráfico y configura etiquetas y título adecuados.</p>
+<section id="id9">
+<h3>Parámetros:<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id10">
+<h3>Retorna:<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.plot_simionescu_with_constraints">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_simionescu_with_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_simionescu_with_constraints"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.plot_simionescu_with_constraints" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Simionescu con restricciones definidas.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Simionescu y aplica restricciones en el dominio.
+Configura etiquetas y título adecuados.</p>
+<section id="id11">
+<h3>Parámetros:<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id12">
+<h3>Retorna:<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.plot_townsend_with_constraints">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_townsend_with_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_townsend_with_constraints"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.plot_townsend_with_constraints" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Townsend con restricciones definidas.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Townsend y aplica restricciones en el dominio.
+Configura etiquetas y título adecuados.</p>
+<section id="id13">
+<h3>Parámetros:<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id14">
+<h3>Retorna:<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.rosenbrock">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">rosenbrock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#rosenbrock"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.rosenbrock" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Rosenbrock, definida matemáticamente como:
+f(x, y) = (1 - x)**2 + 100 * (y - x**2)**2</p>
+<section id="id15">
+<h3>Parámetros:<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id16">
+<h3>Retorna:<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Rosenbrock evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.rosenbrock_disk">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">rosenbrock_disk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#rosenbrock_disk"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.rosenbrock_disk" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Rosenbrock restringida a un disco de radio 2 centrado en el origen.</p>
+<section id="id17">
+<h3>Parámetros:<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id18">
+<h3>Retorna:<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Rosenbrock restringida al disco evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.simionescu">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">simionescu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#simionescu"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.simionescu" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Simionescu, definida matemáticamente como:
+f(x, y) = 0.1 * (x * y)</p>
+<section id="id19">
+<h3>Parámetros:<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id20">
+<h3>Retorna:<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Simionescu evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_restricciones.townsend">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_restricciones.</span></span><span class="sig-name descname"><span class="pre">townsend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#townsend"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_restricciones.townsend" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Townsend, definida matemáticamente como:
+f(x, y) = -(cos((x - 0.1) * y))^2 - x * sin(3 * x + y)</p>
+<section id="id21">
+<h3>Parámetros:<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id22">
+<h3>Retorna:<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Townsend evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-optimnat.funciones.fun_sin_restricciones">
+<span id="optimnat-funciones-fun-sin-restricciones-module"></span><h2>optimnat.funciones.fun_sin_restricciones module<a class="headerlink" href="#module-optimnat.funciones.fun_sin_restricciones" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.ackley">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">ackley</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6.283185307179586</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#ackley"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.ackley" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Ackley en dos dimensiones.</p>
+<section id="id23">
+<h3>Parámetros:<a class="headerlink" href="#id23" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float</span></dt><dd><p>Valor en el eje x.</p>
+</dd>
+<dt>y<span class="classifier">float</span></dt><dd><p>Valor en el eje y.</p>
+</dd>
+<dt>a<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de la función. Por defecto es 20.</p>
+</dd>
+<dt>b<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de la función. Por defecto es 0.2.</p>
+</dd>
+<dt>c<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de la función. Por defecto es 2 * pi.</p>
+</dd>
+</dl>
+</section>
+<section id="id24">
+<h3>Retorna:<a class="headerlink" href="#id24" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float</dt><dd><p>Valor de la función de Ackley evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.beale">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">beale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#beale"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.beale" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Beale, definida matemáticamente como:
+f(x, y) = (1.5 - x + x*y)^2 + (2.25 - x + x*y^2)^2 + (2.625 - x + x*y^3)^2</p>
+<section id="id25">
+<h3>Parámetros:<a class="headerlink" href="#id25" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id26">
+<h3>Retorna:<a class="headerlink" href="#id26" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Beale evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.booth">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">booth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#booth"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.booth" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Booth, definida matemáticamente como:
+f(x, y) = (x + 2*y - 7)^2 + (2*x + y - 5)^2</p>
+<section id="id27">
+<h3>Parámetros:<a class="headerlink" href="#id27" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id28">
+<h3>Retorna:<a class="headerlink" href="#id28" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Booth evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.bukin_n6">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">bukin_n6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#bukin_n6"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.bukin_n6" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Bukin N.6, definida matemáticamente como:
+f(x, y) = 100 * sqrt(<a href="#id195"><span class="problematic" id="id196">|y - 0.01*x^2|</span></a>) + 0.01 * <a href="#id197"><span class="problematic" id="id198">|x + 10|</span></a></p>
+<section id="id29">
+<h3>Parámetros:<a class="headerlink" href="#id29" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id30">
+<h3>Retorna:<a class="headerlink" href="#id30" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Bukin N.6 evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.cross_in_tray">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">cross_in_tray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#cross_in_tray"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.cross_in_tray" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función de Cross-in-Tray para los valores dados de x e y.</p>
+<section id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns:<a class="headerlink" href="#returns" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.easom">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">easom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#easom"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.easom" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Easom, definida matemáticamente como:
+f(x, y) = -cos(x) * cos(y) * exp(-((x - pi)^2 + (y - pi)^2))</p>
+<section id="id31">
+<h3>Parámetros:<a class="headerlink" href="#id31" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id32">
+<h3>Retorna:<a class="headerlink" href="#id32" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Easom evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.eggholder">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">eggholder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#eggholder"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.eggholder" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función Eggholder para los valores dados de x e y.</p>
+<section id="id33">
+<h3>Parameters:<a class="headerlink" href="#id33" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id34">
+<h3>Returns:<a class="headerlink" href="#id34" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.goldstein_price">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">goldstein_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#goldstein_price"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.goldstein_price" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Goldstein-Price, definida matemáticamente como:
+f(x, y) = [1 + (x + y + 1)^2 * (19 - 14*x + 3*x^2 - 14*y + 6*x*y + 3*y^2)] *</p>
+<blockquote>
+<div><p>[30 + (2*x - 3*y)^2 * (18 - 32*x + 12*x^2 + 48*y - 36*x*y + 27*y^2)]</p>
+</div></blockquote>
+<section id="id35">
+<h3>Parámetros:<a class="headerlink" href="#id35" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id36">
+<h3>Retorna:<a class="headerlink" href="#id36" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Goldstein-Price evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.himmelblau">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">himmelblau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#himmelblau"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.himmelblau" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Himmelblau, definida matemáticamente como:
+f(x, y) = (x^2 + y - 11)^2 + (x + y^2 - 7)^2</p>
+<section id="id37">
+<h3>Parámetros:<a class="headerlink" href="#id37" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id38">
+<h3>Retorna:<a class="headerlink" href="#id38" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Himmelblau evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.holder_table">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">holder_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#holder_table"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.holder_table" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función Holder Table para los valores dados de x e y.</p>
+<section id="id39">
+<h3>Parameters:<a class="headerlink" href="#id39" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id40">
+<h3>Returns:<a class="headerlink" href="#id40" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.levi_n13">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">levi_n13</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#levi_n13"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.levi_n13" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Lévi N.13, definida matemáticamente como:
+f(x, y) = sin^2(3 * pi * x) + (x - 1)^2 * (1 + sin^2(3 * pi * y)) + (y - 1)^2 * (1 + sin^2(2 * pi * y))</p>
+<section id="id41">
+<h3>Parámetros:<a class="headerlink" href="#id41" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id42">
+<h3>Retorna:<a class="headerlink" href="#id42" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Lévi N.13 evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.matyas">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">matyas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#matyas"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.matyas" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Matyas, definida matemáticamente como:
+f(x, y) = 0.26 * (x^2 + y^2) - 0.48 * x * y</p>
+<section id="id43">
+<h3>Parámetros:<a class="headerlink" href="#id43" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id44">
+<h3>Retorna:<a class="headerlink" href="#id44" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Matyas evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.mccormick">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">mccormick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#mccormick"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.mccormick" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función de McCormick para los valores dados de x e y.</p>
+<section id="id45">
+<h3>Parameters:<a class="headerlink" href="#id45" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id46">
+<h3>Returns:<a class="headerlink" href="#id46" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_ackley">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_ackley</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_ackley"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_ackley" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Ackley sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Ackley y muestra el gráfico.</p>
+<section id="id47">
+<h3>Parámetros:<a class="headerlink" href="#id47" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id48">
+<h3>Retorna:<a class="headerlink" href="#id48" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_beale">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_beale</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_beale"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_beale" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Beale sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Beale y muestra el gráfico.</p>
+<section id="id49">
+<h3>Parámetros:<a class="headerlink" href="#id49" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id50">
+<h3>Retorna:<a class="headerlink" href="#id50" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_booth">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_booth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_booth"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_booth" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Booth sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Booth y muestra el gráfico de contorno.</p>
+<section id="id51">
+<h3>Parámetros:<a class="headerlink" href="#id51" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id52">
+<h3>Retorna:<a class="headerlink" href="#id52" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_bukin_n6">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_bukin_n6</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_bukin_n6"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_bukin_n6" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Bukin N.6 sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Bukin N.6 y muestra el gráfico de contorno.</p>
+<section id="id53">
+<h3>Parámetros:<a class="headerlink" href="#id53" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id54">
+<h3>Retorna:<a class="headerlink" href="#id54" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_cross_in_tray">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_cross_in_tray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_cross_in_tray"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_cross_in_tray" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Cross-in-Tray.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Cross-in-Tray y muestra el gráfico de contorno.</p>
+<section id="id55">
+<h3>Returns:<a class="headerlink" href="#id55" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_easom">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_easom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_easom"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_easom" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Easom sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Easom y muestra el gráfico de contorno.</p>
+<section id="id56">
+<h3>Parámetros:<a class="headerlink" href="#id56" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id57">
+<h3>Retorna:<a class="headerlink" href="#id57" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_eggholder">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_eggholder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_eggholder"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_eggholder" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Eggholder.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Eggholder y muestra el gráfico de contorno.</p>
+<section id="id58">
+<h3>Returns:<a class="headerlink" href="#id58" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_goldstein_price">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_goldstein_price</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_goldstein_price"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_goldstein_price" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Goldstein-Price sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Goldstein-Price y muestra el gráfico de contorno.</p>
+<section id="id59">
+<h3>Parámetros:<a class="headerlink" href="#id59" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id60">
+<h3>Retorna:<a class="headerlink" href="#id60" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_himmelblau">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_himmelblau</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_himmelblau"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_himmelblau" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Himmelblau sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Himmelblau y muestra el gráfico de contorno.</p>
+<section id="id61">
+<h3>Parámetros:<a class="headerlink" href="#id61" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id62">
+<h3>Retorna:<a class="headerlink" href="#id62" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_holder_table">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_holder_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_holder_table"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_holder_table" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Holder Table.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Holder Table y muestra el gráfico de contorno.</p>
+<section id="id63">
+<h3>Returns:<a class="headerlink" href="#id63" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_levi_n13">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_levi_n13</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_levi_n13"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_levi_n13" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Lévi N.13 sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Lévi N.13 y muestra el gráfico de contorno.</p>
+<section id="id64">
+<h3>Parámetros:<a class="headerlink" href="#id64" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id65">
+<h3>Retorna:<a class="headerlink" href="#id65" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_matyas">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_matyas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_matyas"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_matyas" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Matyas sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Matyas y muestra el gráfico de contorno.</p>
+<section id="id66">
+<h3>Parámetros:<a class="headerlink" href="#id66" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id67">
+<h3>Retorna:<a class="headerlink" href="#id67" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_mccormick">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_mccormick</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_mccormick"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_mccormick" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de McCormick.</p>
+<p>Utiliza una malla de puntos para evaluar la función de McCormick y muestra el gráfico de contorno.</p>
+<section id="id68">
+<h3>Returns:<a class="headerlink" href="#id68" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_rastrigin">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_rastrigin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_rastrigin"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_rastrigin" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Rastrigin en dos dimensiones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Rastrigin y configura etiquetas y título adecuados.</p>
+<section id="id69">
+<h3>Parámetros:<a class="headerlink" href="#id69" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id70">
+<h3>Retorna:<a class="headerlink" href="#id70" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_rosenbrock">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_rosenbrock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_rosenbrock"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_rosenbrock" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Rosenbrock sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Rosenbrock y muestra el gráfico.</p>
+<section id="id71">
+<h3>Parámetros:<a class="headerlink" href="#id71" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id72">
+<h3>Retorna:<a class="headerlink" href="#id72" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_schaffer_n2">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_schaffer_n2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_schaffer_n2"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_schaffer_n2" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Schaffer N. 2.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Schaffer N. 2 y muestra el gráfico de contorno.</p>
+<section id="id73">
+<h3>Returns:<a class="headerlink" href="#id73" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_schaffer_n4">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_schaffer_n4</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_schaffer_n4"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_schaffer_n4" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Schaffer N. 4.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Schaffer N. 4 y muestra el gráfico de contorno.</p>
+<section id="id74">
+<h3>Returns:<a class="headerlink" href="#id74" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_shekel">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_shekel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_shekel"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_shekel" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de superficie de la función de Shekel.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Shekel y muestra el gráfico de superficie.</p>
+<section id="id75">
+<h3>Returns:<a class="headerlink" href="#id75" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_sphere">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_sphere</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_sphere"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_sphere" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función esférica sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función esférica y muestra el gráfico.</p>
+<section id="id76">
+<h3>Parámetros:<a class="headerlink" href="#id76" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id77">
+<h3>Retorna:<a class="headerlink" href="#id77" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_styblinski_tang">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_styblinski_tang</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_styblinski_tang"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_styblinski_tang" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Styblinski-Tang.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Styblinski-Tang y muestra el gráfico de contorno.</p>
+<section id="id78">
+<h3>Returns:<a class="headerlink" href="#id78" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.plot_three_hump_camel">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">plot_three_hump_camel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_three_hump_camel"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.plot_three_hump_camel" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Three-hump Camel sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Three-hump Camel y muestra el gráfico de contorno.</p>
+<section id="id79">
+<h3>Parámetros:<a class="headerlink" href="#id79" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id80">
+<h3>Retorna:<a class="headerlink" href="#id80" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.rastrigin">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">rastrigin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#rastrigin"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.rastrigin" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Rastrigin en dos dimensiones.</p>
+<section id="id81">
+<h3>Parámetros:<a class="headerlink" href="#id81" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float</span></dt><dd><p>Valor en el eje x.</p>
+</dd>
+<dt>y<span class="classifier">float</span></dt><dd><p>Valor en el eje y.</p>
+</dd>
+<dt>A<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de ajuste (por defecto A=10).</p>
+</dd>
+<dt>n<span class="classifier">int, opcional</span></dt><dd><p>Dimensión de la función (por defecto n=2).</p>
+</dd>
+</dl>
+</section>
+<section id="id82">
+<h3>Retorna:<a class="headerlink" href="#id82" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float</dt><dd><p>Valor de la función de Rastrigin en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.rosenbrock">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">rosenbrock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#rosenbrock"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.rosenbrock" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Rosenbrock, definida matemáticamente como:
+f(x, y) = (a - x)^2 + b * (y - x^2)^2</p>
+<section id="id83">
+<h3>Parámetros:<a class="headerlink" href="#id83" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+<dt>a<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de la función. Por defecto es 1.</p>
+</dd>
+<dt>b<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de la función. Por defecto es 100.</p>
+</dd>
+</dl>
+</section>
+<section id="id84">
+<h3>Retorna:<a class="headerlink" href="#id84" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Rosenbrock evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.schaffer_n2">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">schaffer_n2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#schaffer_n2"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.schaffer_n2" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función Schaffer N. 2 para los valores dados de x e y.</p>
+<section id="id85">
+<h3>Parameters:<a class="headerlink" href="#id85" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id86">
+<h3>Returns:<a class="headerlink" href="#id86" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.schaffer_n4">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">schaffer_n4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#schaffer_n4"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.schaffer_n4" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función Schaffer N. 4 para los valores dados de x e y.</p>
+<section id="id87">
+<h3>Parameters:<a class="headerlink" href="#id87" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id88">
+<h3>Returns:<a class="headerlink" href="#id88" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.shekel">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">shekel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#shekel"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.shekel" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función de Shekel para los valores dados de x e y.</p>
+<section id="id89">
+<h3>Parameters:<a class="headerlink" href="#id89" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>X<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x e y.</p>
+</dd>
+<dt>m<span class="classifier">int, opcional</span></dt><dd><p>Número de términos en la suma (por defecto es 10).</p>
+</dd>
+</dl>
+</section>
+<section id="id90">
+<h3>Returns:<a class="headerlink" href="#id90" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.sphere">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">sphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#sphere"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.sphere" title="Link to this definition">¶</a></dt>
+<dd><p>Función esférica, definida matemáticamente como:
+f(x, y) = x^2 + y^2</p>
+<section id="id91">
+<h3>Parámetros:<a class="headerlink" href="#id91" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id92">
+<h3>Retorna:<a class="headerlink" href="#id92" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función esférica evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.styblinski_tang">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">styblinski_tang</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#styblinski_tang"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.styblinski_tang" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función Styblinski-Tang para los valores dados de x e y.</p>
+<section id="id93">
+<h3>Parameters:<a class="headerlink" href="#id93" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id94">
+<h3>Returns:<a class="headerlink" href="#id94" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.fun_sin_restricciones.three_hump_camel">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.fun_sin_restricciones.</span></span><span class="sig-name descname"><span class="pre">three_hump_camel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#three_hump_camel"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.fun_sin_restricciones.three_hump_camel" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Three-hump Camel, definida matemáticamente como:
+f(x, y) = 2*x^2 - 1.05*x^4 + (x^6)/6 + x*y + y^2</p>
+<section id="id95">
+<h3>Parámetros:<a class="headerlink" href="#id95" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id96">
+<h3>Retorna:<a class="headerlink" href="#id96" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Three-hump Camel evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-optimnat.funciones">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-optimnat.funciones" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.ackley">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">ackley</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6.283185307179586</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#ackley"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.ackley" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Ackley en dos dimensiones.</p>
+<section id="id97">
+<h3>Parámetros:<a class="headerlink" href="#id97" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float</span></dt><dd><p>Valor en el eje x.</p>
+</dd>
+<dt>y<span class="classifier">float</span></dt><dd><p>Valor en el eje y.</p>
+</dd>
+<dt>a<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de la función. Por defecto es 20.</p>
+</dd>
+<dt>b<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de la función. Por defecto es 0.2.</p>
+</dd>
+<dt>c<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de la función. Por defecto es 2 * pi.</p>
+</dd>
+</dl>
+</section>
+<section id="id98">
+<h3>Retorna:<a class="headerlink" href="#id98" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float</dt><dd><p>Valor de la función de Ackley evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.beale">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">beale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#beale"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.beale" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Beale, definida matemáticamente como:
+f(x, y) = (1.5 - x + x*y)^2 + (2.25 - x + x*y^2)^2 + (2.625 - x + x*y^3)^2</p>
+<section id="id99">
+<h3>Parámetros:<a class="headerlink" href="#id99" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id100">
+<h3>Retorna:<a class="headerlink" href="#id100" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Beale evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.bird_mishra">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">bird_mishra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#bird_mishra"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.bird_mishra" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Bird-Mishra, definida matemáticamente como:
+f(x, y) = sin(y) * exp((1 - cos(x))**2) + cos(x) * exp((1 - sin(y))**2) + (x - y)**2</p>
+<section id="id101">
+<h3>Parámetros:<a class="headerlink" href="#id101" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id102">
+<h3>Retorna:<a class="headerlink" href="#id102" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Bird-Mishra evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.booth">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">booth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#booth"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.booth" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Booth, definida matemáticamente como:
+f(x, y) = (x + 2*y - 7)^2 + (2*x + y - 5)^2</p>
+<section id="id103">
+<h3>Parámetros:<a class="headerlink" href="#id103" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id104">
+<h3>Retorna:<a class="headerlink" href="#id104" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Booth evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.bukin_n6">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">bukin_n6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#bukin_n6"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.bukin_n6" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Bukin N.6, definida matemáticamente como:
+f(x, y) = 100 * sqrt(<a href="#id199"><span class="problematic" id="id200">|y - 0.01*x^2|</span></a>) + 0.01 * <a href="#id201"><span class="problematic" id="id202">|x + 10|</span></a></p>
+<section id="id105">
+<h3>Parámetros:<a class="headerlink" href="#id105" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id106">
+<h3>Retorna:<a class="headerlink" href="#id106" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Bukin N.6 evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.cross_in_tray">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">cross_in_tray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#cross_in_tray"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.cross_in_tray" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función de Cross-in-Tray para los valores dados de x e y.</p>
+<section id="id107">
+<h3>Parameters:<a class="headerlink" href="#id107" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id108">
+<h3>Returns:<a class="headerlink" href="#id108" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.easom">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">easom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#easom"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.easom" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Easom, definida matemáticamente como:
+f(x, y) = -cos(x) * cos(y) * exp(-((x - pi)^2 + (y - pi)^2))</p>
+<section id="id109">
+<h3>Parámetros:<a class="headerlink" href="#id109" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id110">
+<h3>Retorna:<a class="headerlink" href="#id110" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Easom evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.eggholder">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">eggholder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#eggholder"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.eggholder" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función Eggholder para los valores dados de x e y.</p>
+<section id="id111">
+<h3>Parameters:<a class="headerlink" href="#id111" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id112">
+<h3>Returns:<a class="headerlink" href="#id112" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.goldstein_price">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">goldstein_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#goldstein_price"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.goldstein_price" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Goldstein-Price, definida matemáticamente como:
+f(x, y) = [1 + (x + y + 1)^2 * (19 - 14*x + 3*x^2 - 14*y + 6*x*y + 3*y^2)] *</p>
+<blockquote>
+<div><p>[30 + (2*x - 3*y)^2 * (18 - 32*x + 12*x^2 + 48*y - 36*x*y + 27*y^2)]</p>
+</div></blockquote>
+<section id="id113">
+<h3>Parámetros:<a class="headerlink" href="#id113" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id114">
+<h3>Retorna:<a class="headerlink" href="#id114" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Goldstein-Price evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.gomez_levy">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">gomez_levy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#gomez_levy"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.gomez_levy" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Gómez y Levy, definida matemáticamente como:
+f(x, y) = 4*x**2 - 2.1*x**4 + (1/3)*x**6 + x*y - 4*y**2 + 4*y**4</p>
+<section id="id115">
+<h3>Parámetros:<a class="headerlink" href="#id115" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id116">
+<h3>Retorna:<a class="headerlink" href="#id116" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Gómez y Levy evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.himmelblau">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">himmelblau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#himmelblau"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.himmelblau" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Himmelblau, definida matemáticamente como:
+f(x, y) = (x^2 + y - 11)^2 + (x + y^2 - 7)^2</p>
+<section id="id117">
+<h3>Parámetros:<a class="headerlink" href="#id117" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id118">
+<h3>Retorna:<a class="headerlink" href="#id118" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Himmelblau evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.holder_table">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">holder_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#holder_table"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.holder_table" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función Holder Table para los valores dados de x e y.</p>
+<section id="id119">
+<h3>Parameters:<a class="headerlink" href="#id119" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id120">
+<h3>Returns:<a class="headerlink" href="#id120" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.levi_n13">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">levi_n13</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#levi_n13"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.levi_n13" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Lévi N.13, definida matemáticamente como:
+f(x, y) = sin^2(3 * pi * x) + (x - 1)^2 * (1 + sin^2(3 * pi * y)) + (y - 1)^2 * (1 + sin^2(2 * pi * y))</p>
+<section id="id121">
+<h3>Parámetros:<a class="headerlink" href="#id121" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id122">
+<h3>Retorna:<a class="headerlink" href="#id122" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Lévi N.13 evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.matyas">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">matyas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#matyas"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.matyas" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Matyas, definida matemáticamente como:
+f(x, y) = 0.26 * (x^2 + y^2) - 0.48 * x * y</p>
+<section id="id123">
+<h3>Parámetros:<a class="headerlink" href="#id123" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id124">
+<h3>Retorna:<a class="headerlink" href="#id124" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Matyas evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.mccormick">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">mccormick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#mccormick"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.mccormick" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función de McCormick para los valores dados de x e y.</p>
+<section id="id125">
+<h3>Parameters:<a class="headerlink" href="#id125" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id126">
+<h3>Returns:<a class="headerlink" href="#id126" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_ackley">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_ackley</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_ackley"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_ackley" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Ackley sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Ackley y muestra el gráfico.</p>
+<section id="id127">
+<h3>Parámetros:<a class="headerlink" href="#id127" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id128">
+<h3>Retorna:<a class="headerlink" href="#id128" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_beale">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_beale</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_beale"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_beale" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Beale sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Beale y muestra el gráfico.</p>
+<section id="id129">
+<h3>Parámetros:<a class="headerlink" href="#id129" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id130">
+<h3>Retorna:<a class="headerlink" href="#id130" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_bird_mishra_with_constraints">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_bird_mishra_with_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_bird_mishra_with_constraints"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_bird_mishra_with_constraints" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Bird-Mishra, restringida por una condición circular.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Bird-Mishra y aplica una restricción circular en el dominio.
+Muestra el punto óptimo conocido en el gráfico y configura etiquetas y título adecuados.</p>
+<section id="id131">
+<h3>Parámetros:<a class="headerlink" href="#id131" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id132">
+<h3>Retorna:<a class="headerlink" href="#id132" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_booth">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_booth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_booth"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_booth" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Booth sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Booth y muestra el gráfico de contorno.</p>
+<section id="id133">
+<h3>Parámetros:<a class="headerlink" href="#id133" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id134">
+<h3>Retorna:<a class="headerlink" href="#id134" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_bukin_n6">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_bukin_n6</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_bukin_n6"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_bukin_n6" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Bukin N.6 sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Bukin N.6 y muestra el gráfico de contorno.</p>
+<section id="id135">
+<h3>Parámetros:<a class="headerlink" href="#id135" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id136">
+<h3>Retorna:<a class="headerlink" href="#id136" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_cross_in_tray">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_cross_in_tray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_cross_in_tray"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_cross_in_tray" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Cross-in-Tray.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Cross-in-Tray y muestra el gráfico de contorno.</p>
+<section id="id137">
+<h3>Returns:<a class="headerlink" href="#id137" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_easom">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_easom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_easom"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_easom" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Easom sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Easom y muestra el gráfico de contorno.</p>
+<section id="id138">
+<h3>Parámetros:<a class="headerlink" href="#id138" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id139">
+<h3>Retorna:<a class="headerlink" href="#id139" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_eggholder">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_eggholder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_eggholder"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_eggholder" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Eggholder.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Eggholder y muestra el gráfico de contorno.</p>
+<section id="id140">
+<h3>Returns:<a class="headerlink" href="#id140" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_goldstein_price">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_goldstein_price</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_goldstein_price"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_goldstein_price" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Goldstein-Price sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Goldstein-Price y muestra el gráfico de contorno.</p>
+<section id="id141">
+<h3>Parámetros:<a class="headerlink" href="#id141" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id142">
+<h3>Retorna:<a class="headerlink" href="#id142" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_gomez_levy_with_constraints">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_gomez_levy_with_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_gomez_levy_with_constraints"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_gomez_levy_with_constraints" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Gomez y Levy con restricciones definidas.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Gomez y Levy y aplica restricciones en el dominio.
+Configura etiquetas y título adecuados.</p>
+<section id="id143">
+<h3>Parámetros:<a class="headerlink" href="#id143" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id144">
+<h3>Retorna:<a class="headerlink" href="#id144" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_himmelblau">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_himmelblau</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_himmelblau"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_himmelblau" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Himmelblau sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Himmelblau y muestra el gráfico de contorno.</p>
+<section id="id145">
+<h3>Parámetros:<a class="headerlink" href="#id145" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id146">
+<h3>Retorna:<a class="headerlink" href="#id146" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_holder_table">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_holder_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_holder_table"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_holder_table" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Holder Table.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Holder Table y muestra el gráfico de contorno.</p>
+<section id="id147">
+<h3>Returns:<a class="headerlink" href="#id147" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_levi_n13">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_levi_n13</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_levi_n13"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_levi_n13" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Lévi N.13 sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Lévi N.13 y muestra el gráfico de contorno.</p>
+<section id="id148">
+<h3>Parámetros:<a class="headerlink" href="#id148" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id149">
+<h3>Retorna:<a class="headerlink" href="#id149" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_matyas">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_matyas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_matyas"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_matyas" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Matyas sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Matyas y muestra el gráfico de contorno.</p>
+<section id="id150">
+<h3>Parámetros:<a class="headerlink" href="#id150" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id151">
+<h3>Retorna:<a class="headerlink" href="#id151" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_mccormick">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_mccormick</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_mccormick"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_mccormick" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de McCormick.</p>
+<p>Utiliza una malla de puntos para evaluar la función de McCormick y muestra el gráfico de contorno.</p>
+<section id="id152">
+<h3>Returns:<a class="headerlink" href="#id152" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_rastrigin">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_rastrigin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_rastrigin"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_rastrigin" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Rastrigin en dos dimensiones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Rastrigin y configura etiquetas y título adecuados.</p>
+<section id="id153">
+<h3>Parámetros:<a class="headerlink" href="#id153" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id154">
+<h3>Retorna:<a class="headerlink" href="#id154" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_rosenbrock">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_rosenbrock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_rosenbrock"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_rosenbrock" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Rosenbrock sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Rosenbrock y muestra el gráfico.</p>
+<section id="id155">
+<h3>Parámetros:<a class="headerlink" href="#id155" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id156">
+<h3>Retorna:<a class="headerlink" href="#id156" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_rosenbrock_cubic_linear_constraint">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_rosenbrock_cubic_linear_constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_rosenbrock_cubic_linear_constraint"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_rosenbrock_cubic_linear_constraint" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Rosenbrock, restringida por una cúbica y una restricción lineal.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Rosenbrock y aplica restricciones cúbicas y lineales en el dominio.
+Muestra el punto óptimo conocido en el gráfico y configura etiquetas y título adecuados.</p>
+<section id="id157">
+<h3>Parámetros:<a class="headerlink" href="#id157" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id158">
+<h3>Retorna:<a class="headerlink" href="#id158" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_rosenbrock_disc_constraint">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_rosenbrock_disc_constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_rosenbrock_disc_constraint"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_rosenbrock_disc_constraint" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Rosenbrock, restringida a un disco de radio 2 centrado en el origen.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Rosenbrock y aplica una restricción circular en el dominio.
+Muestra el punto óptimo conocido en el gráfico y configura etiquetas y título adecuados.</p>
+<section id="id159">
+<h3>Parámetros:<a class="headerlink" href="#id159" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id160">
+<h3>Retorna:<a class="headerlink" href="#id160" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_schaffer_n2">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_schaffer_n2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_schaffer_n2"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_schaffer_n2" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Schaffer N. 2.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Schaffer N. 2 y muestra el gráfico de contorno.</p>
+<section id="id161">
+<h3>Returns:<a class="headerlink" href="#id161" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_schaffer_n4">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_schaffer_n4</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_schaffer_n4"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_schaffer_n4" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Schaffer N. 4.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Schaffer N. 4 y muestra el gráfico de contorno.</p>
+<section id="id162">
+<h3>Returns:<a class="headerlink" href="#id162" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_shekel">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_shekel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_shekel"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_shekel" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de superficie de la función de Shekel.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Shekel y muestra el gráfico de superficie.</p>
+<section id="id163">
+<h3>Returns:<a class="headerlink" href="#id163" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_simionescu_with_constraints">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_simionescu_with_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_simionescu_with_constraints"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_simionescu_with_constraints" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Simionescu con restricciones definidas.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Simionescu y aplica restricciones en el dominio.
+Configura etiquetas y título adecuados.</p>
+<section id="id164">
+<h3>Parámetros:<a class="headerlink" href="#id164" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id165">
+<h3>Retorna:<a class="headerlink" href="#id165" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_sphere">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_sphere</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_sphere"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_sphere" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función esférica sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función esférica y muestra el gráfico.</p>
+<section id="id166">
+<h3>Parámetros:<a class="headerlink" href="#id166" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id167">
+<h3>Retorna:<a class="headerlink" href="#id167" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_styblinski_tang">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_styblinski_tang</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_styblinski_tang"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_styblinski_tang" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Styblinski-Tang.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Styblinski-Tang y muestra el gráfico de contorno.</p>
+<section id="id168">
+<h3>Returns:<a class="headerlink" href="#id168" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_three_hump_camel">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_three_hump_camel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#plot_three_hump_camel"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_three_hump_camel" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Three-hump Camel sin restricciones.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Three-hump Camel y muestra el gráfico de contorno.</p>
+<section id="id169">
+<h3>Parámetros:<a class="headerlink" href="#id169" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para el tamaño del gráfico.</p>
+</section>
+<section id="id170">
+<h3>Retorna:<a class="headerlink" href="#id170" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.plot_townsend_with_constraints">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">plot_townsend_with_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#plot_townsend_with_constraints"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.plot_townsend_with_constraints" title="Link to this definition">¶</a></dt>
+<dd><p>Genera un gráfico de contorno de la función de Townsend con restricciones definidas.</p>
+<p>Utiliza una malla de puntos para evaluar la función de Townsend y aplica restricciones en el dominio.
+Configura etiquetas y título adecuados.</p>
+<section id="id171">
+<h3>Parámetros:<a class="headerlink" href="#id171" title="Link to this heading">¶</a></h3>
+<p>No recibe parámetros de entrada directos. Utiliza valores predefinidos para las restricciones y el tamaño del gráfico.</p>
+</section>
+<section id="id172">
+<h3>Retorna:<a class="headerlink" href="#id172" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>None</dt><dd><p>Muestra el gráfico utilizando matplotlib.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.rastrigin">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">rastrigin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#rastrigin"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.rastrigin" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Rastrigin en dos dimensiones.</p>
+<section id="id173">
+<h3>Parámetros:<a class="headerlink" href="#id173" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float</span></dt><dd><p>Valor en el eje x.</p>
+</dd>
+<dt>y<span class="classifier">float</span></dt><dd><p>Valor en el eje y.</p>
+</dd>
+<dt>A<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de ajuste (por defecto A=10).</p>
+</dd>
+<dt>n<span class="classifier">int, opcional</span></dt><dd><p>Dimensión de la función (por defecto n=2).</p>
+</dd>
+</dl>
+</section>
+<section id="id174">
+<h3>Retorna:<a class="headerlink" href="#id174" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float</dt><dd><p>Valor de la función de Rastrigin en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.rosenbrock">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">rosenbrock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#rosenbrock"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.rosenbrock" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Rosenbrock, definida matemáticamente como:
+f(x, y) = (a - x)^2 + b * (y - x^2)^2</p>
+<section id="id175">
+<h3>Parámetros:<a class="headerlink" href="#id175" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+<dt>a<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de la función. Por defecto es 1.</p>
+</dd>
+<dt>b<span class="classifier">float, opcional</span></dt><dd><p>Parámetro de la función. Por defecto es 100.</p>
+</dd>
+</dl>
+</section>
+<section id="id176">
+<h3>Retorna:<a class="headerlink" href="#id176" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Rosenbrock evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.rosenbrock_disk">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">rosenbrock_disk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#rosenbrock_disk"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.rosenbrock_disk" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Rosenbrock restringida a un disco de radio 2 centrado en el origen.</p>
+<section id="id177">
+<h3>Parámetros:<a class="headerlink" href="#id177" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id178">
+<h3>Retorna:<a class="headerlink" href="#id178" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Rosenbrock restringida al disco evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.schaffer_n2">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">schaffer_n2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#schaffer_n2"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.schaffer_n2" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función Schaffer N. 2 para los valores dados de x e y.</p>
+<section id="id179">
+<h3>Parameters:<a class="headerlink" href="#id179" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id180">
+<h3>Returns:<a class="headerlink" href="#id180" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.schaffer_n4">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">schaffer_n4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#schaffer_n4"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.schaffer_n4" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función Schaffer N. 4 para los valores dados de x e y.</p>
+<section id="id181">
+<h3>Parameters:<a class="headerlink" href="#id181" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id182">
+<h3>Returns:<a class="headerlink" href="#id182" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.shekel">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">shekel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#shekel"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.shekel" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función de Shekel para los valores dados de x e y.</p>
+<section id="id183">
+<h3>Parameters:<a class="headerlink" href="#id183" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>X<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x e y.</p>
+</dd>
+<dt>m<span class="classifier">int, opcional</span></dt><dd><p>Número de términos en la suma (por defecto es 10).</p>
+</dd>
+</dl>
+</section>
+<section id="id184">
+<h3>Returns:<a class="headerlink" href="#id184" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.simionescu">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">simionescu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#simionescu"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.simionescu" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Simionescu, definida matemáticamente como:
+f(x, y) = 0.1 * (x * y)</p>
+<section id="id185">
+<h3>Parámetros:<a class="headerlink" href="#id185" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id186">
+<h3>Retorna:<a class="headerlink" href="#id186" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Simionescu evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.sphere">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">sphere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#sphere"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.sphere" title="Link to this definition">¶</a></dt>
+<dd><p>Función esférica, definida matemáticamente como:
+f(x, y) = x^2 + y^2</p>
+<section id="id187">
+<h3>Parámetros:<a class="headerlink" href="#id187" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id188">
+<h3>Retorna:<a class="headerlink" href="#id188" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función esférica evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.styblinski_tang">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">styblinski_tang</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#styblinski_tang"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.styblinski_tang" title="Link to this definition">¶</a></dt>
+<dd><p>Calcula el valor de la función Styblinski-Tang para los valores dados de x e y.</p>
+<section id="id189">
+<h3>Parameters:<a class="headerlink" href="#id189" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas x.</p>
+</dd>
+<dt>y<span class="classifier">np.ndarray</span></dt><dd><p>Arreglo de valores de coordenadas y.</p>
+</dd>
+</dl>
+</section>
+<section id="id190">
+<h3>Returns:<a class="headerlink" href="#id190" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>np.ndarray</dt><dd><p>Arreglo con los valores de la función evaluada en cada par (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.three_hump_camel">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">three_hump_camel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_sin_restricciones.html#three_hump_camel"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.three_hump_camel" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Three-hump Camel, definida matemáticamente como:
+f(x, y) = 2*x^2 - 1.05*x^4 + (x^6)/6 + x*y + y^2</p>
+<section id="id191">
+<h3>Parámetros:<a class="headerlink" href="#id191" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id192">
+<h3>Retorna:<a class="headerlink" href="#id192" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Three-hump Camel evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimnat.funciones.townsend">
+<span class="sig-prename descclassname"><span class="pre">optimnat.funciones.</span></span><span class="sig-name descname"><span class="pre">townsend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimnat/funciones/fun_restricciones.html#townsend"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#optimnat.funciones.townsend" title="Link to this definition">¶</a></dt>
+<dd><p>Función de Townsend, definida matemáticamente como:
+f(x, y) = -(cos((x - 0.1) * y))^2 - x * sin(3 * x + y)</p>
+<section id="id193">
+<h3>Parámetros:<a class="headerlink" href="#id193" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>x<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Primer componente de la función.</p>
+</dd>
+<dt>y<span class="classifier">float or numpy.ndarray</span></dt><dd><p>Segundo componente de la función.</p>
+</dd>
+</dl>
+</section>
+<section id="id194">
+<h3>Retorna:<a class="headerlink" href="#id194" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt>float or numpy.ndarray</dt><dd><p>Valor de la función de Townsend evaluada en (x, y).</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Metodos de Optimizacion</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="optimnat.html">optimnat package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="optimnat.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimnat.html#module-optimnat">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="optimnat.html">optimnat package</a><ul>
+      <li>Previous: <a href="optimnat.html" title="capítulo anterior">optimnat package</a></li>
+      <li>Next: <a href="optimnat.multivariable.html" title="próximo capítulo">optimnat.multivariable package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Natalia Jarquin.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/optimnat.funciones.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
